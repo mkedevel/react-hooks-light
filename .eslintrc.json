@@ -1,0 +1,82 @@
+{
+  "env": {
+    "browser": true,
+    "node": true,
+    "jest": true
+  },
+  "extends": [
+    "xo",
+    "xo-react",
+    "plugin:import/errors",
+    "plugin:import/warnings"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 12,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "plugins": ["import", "prettier"],
+  "parser": "@babel/eslint-parser",
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx"]
+      }
+    }
+  },
+  "rules": {
+    "indent": [
+      "error",
+      2,
+      { "SwitchCase": 1 }
+    ],
+    "react/jsx-indent": [
+      "error",
+      2,
+      {
+        "checkAttributes": true,
+        "indentLogicalExpressions": true
+      }
+    ],
+    "react/jsx-indent-props": [
+      "error",
+      2
+    ],
+    "lines-between-class-members": [
+        "error",
+        "always",
+        {
+            "exceptAfterSingleLine": true
+        }
+    ],
+    "react/state-in-constructor": [
+        "error",
+        "always"
+    ],
+    "react/static-property-placement": [
+        "warn",
+        "property assignment",
+        {
+            "childContextTypes": "static getter",
+            "contextTypes": "static public field",
+            "contextType": "static public field",
+            "displayName": "static public field"
+        }
+    ],
+    "react/function-component-definition": "off",
+    "react/jsx-max-props-per-line": [
+        "warn",
+        { "maximum": 1 }
+    ],
+    "react/jsx-closing-bracket-location": [
+        "warn",
+        "tag-aligned"
+    ],
+    "react/jsx-child-element-spacing": "off",
+    "capitalized-comments": "off",
+    "default-param-last": "off",
+    "no-console": ["error", {"allow": ["warn", "error"]}]
+  }
+}
