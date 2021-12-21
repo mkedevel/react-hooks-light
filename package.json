@@ -1,6 +1,6 @@
 {
   "name": "react-hooks-light",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Minimal react hooks library",
   "keywords": ["react", "react-hooks", "components", "ui"],
   "main": "./src/index.js",
