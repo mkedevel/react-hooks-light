@@ -3,15 +3,15 @@ Minimal [React](https://reactjs.org) hooks library
 
 ## Installation
 ```bash
-npm install
-yarn install
+npm install react-hooks-light
+yarn install react-hooks-light
 ```
 
 ## How to use
 ### `useOutside` - mouse event click outside of the element
 ```jsx
 import React, {useRef, useState} from 'react';
-import {useOutside} from '-';
+import {useOutside} from 'react-hooks-light';
 
 const OutsideExample = () => {
   const wrapperRef = useRef();
@@ -47,7 +47,7 @@ const OutsideExample = () => {
 ### `usePrevious` - save previous state or props
 ```jsx
 import React, {useRef, useState} from 'react';
-import {useOutside} from '-';
+import {useOutside} from 'react-hooks-light';
 
 const PreviousExample = () => {
   const [value, setValue] = useState(1);
