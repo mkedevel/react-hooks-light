@@ -1,7 +1,7 @@
 import React from 'react';
 import useHover from '../use-hover/use-hover.jsx';
 
-export const PreviousExample = () => {
+export const HoverExample = () => {
   const {isHover, onMouseOver, onMouseOut} = useHover();
 
   return (
@@ -17,4 +17,4 @@ export const PreviousExample = () => {
   );
 };
 
-export default PreviousExample;
+export default HoverExample;
