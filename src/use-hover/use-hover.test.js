@@ -1,34 +1,37 @@
 import {renderHook, act} from '@testing-library/react-hooks';
 import {useHover} from './use-hover.jsx';
 
-describe('E2E useHover', () => {
+describe('Test useHover', () => {
   let hook;
 
   beforeEach(() => {
-    hook = renderHook(() => useHover()).result;
+    hook = () => renderHook(() => useHover());
   });
 
   it('initial state', () => {
-    expect(hook.current.isHover).toBeFalsy();
+    const {result} = hook();
+    expect(result.current.isHover).toBeFalsy();
   });
 
   it('check isHover value changes onMouseOver', () => {
-    const [, onMouseOver] = hook.current;
+    const {result} = hook();
+    const {onMouseOver} = result.current;
 
-    expect(hook.current[0]).toBeFalsy();
+    expect(result.current.isHover).toBeFalsy();
     act(() => onMouseOver());
-    expect(hook.current[0]).toBeTruthy();
+    expect(result.current.isHover).toBeTruthy();
   });
 
   it('check isHover value changes onMouseOut', () => {
-    const [, onMouseOver, onMouseOut] = hook.current;
+    const {result} = hook();
+    const {onMouseOver, onMouseOut} = result.current;
 
-    expect(hook.current[0]).toBeFalsy();
+    expect(result.current.isHover).toBeFalsy();
 
     act(() => onMouseOver());
-    expect(hook.current[0]).toBeTruthy();
+    expect(result.current.isHover).toBeTruthy();
 
     act(() => onMouseOut());
-    expect(hook.current[0]).toBeFalsy();
+    expect(result.current.isHover).toBeFalsy();
   });
 });
