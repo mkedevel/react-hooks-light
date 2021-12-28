@@ -2,20 +2,24 @@
   "name": "react-hooks-light",
   "version": "1.0.0",
   "description": "Minimal react hooks library",
+  "license": "MIT",
+  "private": false,
+  "main": "./src/index.js",
   "keywords": [
     "react",
     "react-hooks",
     "components",
     "ui"
   ],
-  "main": "./src/index.js",
   "author": {
     "name": "Konstantin Mezhuritskiy",
     "email": "mkedevel@gmail.com",
     "url": "https://github.com/mkedevel"
   },
-  "license": "MIT",
-  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mkedevel/react-hooks-light.git"
+  },
   "scripts": {
     "test": "jest --config jest.config.js",
     "test.watch": "jest --watch --config jest.config.js",
