@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import PreviousExample from './example/previous-example.jsx';
-import OutsideExample from './example/outside-example.jsx';
-import HoverExample from './example/hover-example.jsx';
-import TickExample from './example/tick-example.jsx';
+import PreviousExample from './example/previous-example.tsx';
+import OutsideExample from './example/outside-example.tsx';
+import HoverExample from './example/hover-example.tsx';
+import TickExample from './example/tick-example.tsx';
 
 const startApp = () => {
   ReactDOM.render(

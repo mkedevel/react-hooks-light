@@ -1,8 +1,8 @@
 import React, {useRef, useState} from 'react';
-import {useOutside} from '../use-outside/use-outside.jsx';
+import {useOutside} from '../use-outside/use-outside';
 
 export const OutsideExample = () => {
-  const wrapperRef = useRef();
+  const wrapperRef: React.RefObject<HTMLDivElement> = useRef(null);
   const [isActive, setActive] = useState(false);
 
   useOutside({

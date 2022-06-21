@@ -1,5 +1,5 @@
 import React from 'react';
-import useTick from '../use-tick/use-tick.jsx';
+import useTick from '../use-tick/use-tick';
 
 export const TickExample = () => {
   const {timestamp, tick} = useTick({

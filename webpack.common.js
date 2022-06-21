@@ -28,6 +28,9 @@ module.exports = {
   module: {
     rules: [babel()]
   },
+  resolve: {
+    extensions: ['.tsx', '.ts', '.jsx', '.js']
+  },
   target: 'web', // for HMR
   optimization: {
     moduleIds: 'deterministic',

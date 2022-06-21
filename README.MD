@@ -89,7 +89,7 @@ First render return `undefined`, next render return `previous` value
 ## Example
 ```jsx
 import React, {useRef, useState} from 'react';
-import {useOutside} from 'react-hooks-light';
+import {usePrevious} from 'react-hooks-light';
 
 const PreviousExample = () => {
   const [value, setValue] = useState(1);
@@ -137,7 +137,7 @@ Return tick cooldown. You can use this hook, if you need live update fetch API
 ## Example
 ```jsx
 import React from 'react';
-import useTick from '../use-tick/use-tick.jsx';
+import {useTick} from 'react-hooks-light';
 
 export const TickExample = () => {
   const {timestamp, tick} = useTick({
@@ -177,7 +177,7 @@ Using events: mouseout & mouseover, return hover state
 ## Example
 ```jsx
 import React from 'react';
-import useHover from '../use-hover/use-hover.jsx';
+import {useHover} from 'react-hooks-light';
 
 export const HoverExample = () => {
   const {isHover, onMouseOver, onMouseOut} = useHover();
