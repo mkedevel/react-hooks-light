@@ -1,5 +1,5 @@
 import {renderHook, act} from '@testing-library/react-hooks';
-import {useHover} from './use-hover.jsx';
+import {useHover} from './use-hover';
 
 describe('Test useHover', () => {
   let hook;

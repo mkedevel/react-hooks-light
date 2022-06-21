@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import usePrevious from '../use-previous/use-previous.jsx';
+import usePrevious from '../use-previous/use-previous';
 
 export const PreviousExample = () => {
   const [value, setValue] = useState(1);
