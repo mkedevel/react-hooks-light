@@ -16,6 +16,7 @@ yarn add react-hooks-light
 * [`usePrevious`](#usePrevious)
 * [`useTick`](#useTick)
 * [`useHover`](#useHover)
+* [`useWindowResize`](#useWindowResize)
 # <a name="useOutside"></a>useOutside
 Mouse event click outside of the element
 ## Usage
@@ -27,11 +28,11 @@ useOutside({
 })
 ```
 ## Parameters
-|Parameter   |Type       |Description               |
-|------------|-----------|--------------------------|
-|`ref`       | ReactRef  | Wrapper element ref      |
-|`isActive`  | Bool      | Active status            |
-|`onOutClick`| Func      | Event out click callback |
+|Parameter   |Type       |Description               |Required|
+|------------|-----------|--------------------------|--------|
+|`ref`       | ReactRef  | Wrapper element ref      | True   |
+|`isActive`  | Bool      | Active status            | True   |
+|`onOutClick`| Func      | Event out click callback | True   |
 ## Example
 ```jsx
 import React, {useRef, useState} from 'react';
@@ -81,9 +82,9 @@ Save previous state or props (Primitive or Object values)
 const prevValue = usePrevious({value: 1});
 ```
 ## Parameters
-|Parameter   |Type       |Description               |
-|------------|-----------|--------------------------|
-|`Any`       | Primitive or Object  | Primitive or Object|
+|Parameter   |Type       |Description               |Required     |
+|------------|-----------|--------------------------|-------------|
+|`Any`       | Primitive or Object  | Primitive or Object| True   |
 ## Return
 First render return `undefined`, next render return `previous` value
 ## Example
@@ -124,11 +125,11 @@ Return tick cooldown. You can use this hook, if you need live update fetch API
   });
 ```
 ## Parameters
-|Parameter   |Type       |Description               |
-|------------|-----------|--------------------------|
-|`isActive`  | Bool      | Activate tick            |
-|`msDelay`   | Number    | Microseconds tick delay  |
-|`count`     | Number    | Start cooldown tick      |
+|Parameter   |Type       |Description               |Required|
+|------------|-----------|--------------------------|--------|
+|`isActive`  | Bool      | Activate tick            |True    |
+|`msDelay`   | Number    | Microseconds tick delay  |True    |
+|`count`     | Number    | Start cooldown tick      |True    |
 ## Return
 |Parameter   |Type       |Description               |
 |------------|-----------|--------------------------|
@@ -197,4 +198,53 @@ export const HoverExample = () => {
 
 export default HoverExample;
 ```
+# <a name="useWindowResize"></a>useWindowResize
+Using events: resize, return window document size
+
+## Usage
+```jsx
+  const documentSize = useWindowResize();
+```
+or
+```jsx
+  useWindowResize({onResize: callbackHandler});
+```
+or
+```jsx
+  const documentSize = useWindowResize({onResize: callbackHandler});
+```
+## Parameters
+|Parameter   |Type       |Description                          |Required|
+|------------|-----------|-------------------------------------|--------|
+|`onResize`  | Func      | Handler called after resize event   |False   |
+## Return
+|Parameter   |Type       |Description                 |
+|------------|-----------|----------------------------|
+|`documentSize`| Object    | Document width and height  |
+## Example
+```jsx
+import React, {useState} from 'react';
+import {useWindowResize} from 'react-hooks-light';
+
+export const WindowResizeExample = () => {
+  const [counter, setCounter] = useState(0);
+
+  const resizeHandler = () => {
+    setCounter(counter + 1);
+  };
+
+  const documentSize = useWindowResize({onResize: resizeHandler});
+
+  return (
+    <div>
+      document, widht {documentSize.width}, height: {documentSize.height}
+      <br/>
+      counter resize event: {counter}
+    </div>
+  );
+};
+
+export default WindowResizeExample;
+```
+
 ###

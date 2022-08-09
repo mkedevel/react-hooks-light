@@ -1,37 +1,42 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import PreviousExample from './example/previous-example.tsx';
-import OutsideExample from './example/outside-example.tsx';
-import HoverExample from './example/hover-example.tsx';
-import TickExample from './example/tick-example.tsx';
+import PreviousExample from './example/previous-example';
+import OutsideExample from './example/outside-example';
+import HoverExample from './example/hover-example';
+import TickExample from './example/tick-example';
+import WindowResizeExample from './example/window-resize-example';
 
 const startApp = () => {
   ReactDOM.render(
     <div>
-      <h1>Examples</h1>
+      <h1>ReactHooksLight Examples</h1>
       <ul style={{
         listStyle: 'decimal'
       }}
       >
         <li>
-          <h2>Previous Example</h2>
+          <h2>usePrevious</h2>
           <PreviousExample/>
           <hr/>
         </li>
         <li>
-          <h2>Outside Example</h2>
+          <h2>useOutside</h2>
           <OutsideExample/>
           <hr/>
         </li>
         <li>
-          <h2>Hover Example</h2>
+          <h2>useHover</h2>
           <HoverExample/>
           <hr/>
         </li>
         <li>
-          <h2>Tick Example</h2>
+          <h2>useTick</h2>
           <TickExample/>
+        </li>
+        <li>
+          <h2>useWindowResize</h2>
+          <WindowResizeExample/>
         </li>
       </ul>
     </div>,

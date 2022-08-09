@@ -1,5 +1,5 @@
 import React, {useRef, useState} from 'react';
-import {useOutside} from '../use-outside/use-outside';
+import useOutside from '../use-outside/use-outside';
 
 export const OutsideExample = () => {
   const wrapperRef: React.RefObject<HTMLDivElement> = useRef(null);
