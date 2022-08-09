@@ -1,5 +1,5 @@
 import React from 'react';
-import useHover from '../use-hover/use-hover.jsx';
+import useHover from '../use-hover/use-hover';
 
 export const HoverExample = () => {
   const {isHover, onMouseOver, onMouseOut} = useHover();

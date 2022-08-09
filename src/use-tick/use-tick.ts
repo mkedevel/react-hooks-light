@@ -1,12 +1,23 @@
 import {useEffect, useState} from 'react';
 
-export const useTick = ({isActive, msDelay, count}) => {
+export interface useTickProps {
+  isActive: boolean;
+  msDelay: number;
+  count: number;
+}
+
+export interface useTickHook {
+  timestamp: string;
+  tick: number;
+}
+
+export const useTick = ({isActive, msDelay, count}: useTickProps): useTickHook => {
   const now = () => Date.now().toString().slice(0, 10);
   const [tick, setNextTick] = useState(count);
   const [timestamp, setTimestamp] = useState(now());
 
   useEffect(() => {
-    let id;
+    let id: ReturnType<typeof setTimeout>;
     if (isActive) {
       id = setTimeout(() => {
         if (tick > 0) {

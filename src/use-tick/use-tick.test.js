@@ -1,5 +1,5 @@
 import {renderHook} from '@testing-library/react-hooks';
-import {useTick} from './use-tick.jsx';
+import {useTick} from './use-tick';
 
 describe('Test useTick', () => {
   let hook;

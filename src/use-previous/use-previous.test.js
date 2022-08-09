@@ -1,5 +1,5 @@
 import {renderHook} from '@testing-library/react-hooks';
-import {usePrevious} from './use-previous.jsx';
+import {usePrevious} from './use-previous';
 
 describe('Test usePrevious', () => {
   let hook;

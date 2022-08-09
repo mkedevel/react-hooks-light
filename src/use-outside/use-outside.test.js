@@ -1,5 +1,5 @@
 import {renderHook, act} from '@testing-library/react-hooks';
-import {useOutside} from './use-outside.jsx';
+import {useOutside} from './use-outside';
 
 describe('Test useOutside', () => {
   let hook;
